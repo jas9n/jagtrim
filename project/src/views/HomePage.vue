@@ -4,7 +4,7 @@
 <template>
   <div id="home">
     <div id="landing" class="w-full h-screen flex justify-center items-center bg-zinc-200 text-center">
-      <h1>
+      <h1 class="font-sans">
         Landing
       </h1>
     </div>
