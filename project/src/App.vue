@@ -6,11 +6,9 @@ import GlobalNav from './components/GlobalNav.vue';
 <template>
   <header>
     <GlobalNav />
-    
   </header>
-
   <RouterView />
 </template>
 
-<style scoped>
+<style>
 </style>

@@ -1,16 +1,68 @@
-<script setup>
-
-</script>
-
 <template>
     <div id="nav">
-        <nav class="fixed flex justify-between items-center w-full px-12 py-6 bg-white">
-            <h2><RouterLink to="/"><img src="@/assets/images/logo.svg" alt="JagTrim International" class="h-12"></RouterLink></h2>
-            <ul class="flex justify-center space-x-8">
-                <li><a href="#about">About</a></li>
-                <li><a href="#products">Products</a></li>
-                <li><RouterLink to="/contact">Contact</RouterLink></li>
+        <nav :class="{ sticky: nav }" class="fixed top-0 flex justify-between items-center w-full px-16 py-6 z-50 bg-transparent">
+            <RouterLink to="/"><img src="@/assets/images/logo.svg" alt="JagTrim International" class="h-12"></RouterLink>
+            <ul class="flex justify-center space-x-12">
+                <li><a id="underline" class="relative inline-block" href="/#about">About</a></li>
+                <li><a id="underline" class="relative inline-block" href="/#products">Products</a></li>
+                <li><RouterLink to="/contact" id="underline" class="relative inline-block">Contact</RouterLink></li>
             </ul>
         </nav>
     </div>
 </template>
+
+<script>
+export default {
+    name: "GlobalNav",
+    data() {
+        return {
+            nav: false
+        }
+    },
+    created() {
+        window.addEventListener("scroll", this.scroll)
+    },
+    methods: {
+        scroll() {
+            if (window.scrollY > 0) {
+                this.nav = true
+            } else {
+                this.nav = false
+            }
+        },
+    }
+
+}
+</script>
+
+<style scoped>
+.sticky {
+    background: rgba(255, 255, 255, 1);
+    transition: background 0.3s ease;
+    position: fixed;
+}
+
+nav:hover {
+    background: rgba(255, 255, 255, 1);
+    transition: background 0.3s ease;
+}
+
+#underline:after {
+  background: none repeat scroll 0 0 transparent;
+  bottom: 0;
+  content: '';
+  display: block;
+  height: 1.25px;
+  border-radius: 0.6px;
+  left: 50%;
+  position: absolute;
+  background: rgb(0 0 0);
+  transition: width 0.4s ease 0s, left 0.4s ease 0s;
+  width: 0;
+}
+
+#underline:hover:after {
+  width: 100%;
+  left: 0;
+}
+</style>
