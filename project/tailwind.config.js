@@ -7,7 +7,8 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        sans: ['Satoshi-Regular', 'sans-serif']
+        sans: ['Kumbh Sans', 'sans-serif'],
+        serif: ['Lora', 'serif']
       }
     },
   },

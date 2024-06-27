@@ -1,0 +1,19 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    @font-face {
+      font-family: 'Lora';
+      src: url('../fonts/Lora/Lora-VariableFont_wght.ttf') format('truetype');
+      font-display: swap;
+      font-style: normal;
+    }
+    @font-face {
+      font-family: 'Kumbh Sans';
+      src: url('../fonts/Kumbh_Sans/KumbhSans-VariableFont_YOPQ,wght.ttf') format('truetype');
+      font-display: swap;
+      font-style: normal;
+    }
+
+}
