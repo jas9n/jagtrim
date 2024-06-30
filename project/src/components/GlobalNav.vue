@@ -2,7 +2,7 @@
     <div id="nav">
         <nav :class="{ sticky: nav }" class="fixed top-0 flex justify-between items-center w-full px-16 py-6 z-50 bg-transparent">
             <RouterLink to="/"><img src="@/assets/images/logo.svg" alt="JagTrim International" class="h-12"></RouterLink>
-            <ul class="flex justify-center space-x-12">
+            <ul class="flex justify-center space-x-12 font-medium">
                 <li><a id="underline" class="relative inline-block" href="/#about">About</a></li>
                 <li><a id="underline" class="relative inline-block" href="/#products">Products</a></li>
                 <li><RouterLink to="/contact" id="underline" class="relative inline-block">Contact</RouterLink></li>
@@ -52,7 +52,7 @@ nav:hover {
   bottom: 0;
   content: '';
   display: block;
-  height: 1.25px;
+  height: 1.5px;
   border-radius: 0.6px;
   left: 50%;
   position: absolute;
