@@ -1,12 +1,29 @@
+<script setup>
+import FormInput from "../components/FormInput.vue"
+import GlobalBtn from "../components/GlobalBtn.vue"
+</script>
 <template>
   <div id="contact">
-    <div class="w-full h-screen flex flex-col justify-center items-center bg-zinc-200 text-center">
-      <h1 class="text-5xl font-serif font-medium p-8">
-        Lorem ipsum dolor sit amet.
-      </h1>
-      <p class="text-lg font-light px-40">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum enim eaque quam tempore obcaecati laborum repellat vero et harum quo culpa unde, facere similique adipisci quos. Obcaecati quos molestias dolores quibusdam accusamus ipsam modi reiciendis officia exercitationem, laudantium quae harum fugiat. Obcaecati incidunt harum voluptatibus deserunt repellat iure quam culpa tenetur! Totam magnam, reiciendis corrupti unde animi eum hic voluptate iure quia nisi debitis vero placeat consequatur autem eveniet blanditiis ad doloribus commodi ut ex nemo! Voluptas delectus odio velit rerum reprehenderit perferendis aspernatur sequi harum, temporibus est quisquam in iure similique blanditiis animi ea, repellat voluptatem voluptatum tempore. Laboriosam.</p>
+    <div class="w-full h-screen flex justify-center items-center">
+      <div class="flex justify-center items-center space-x-8 mt-10">
+        <img src="../assets/images/button.svg" alt="Big Yellow Button" class="h-[70vh]">
+        <div class="flex flex-col justify-center items-start">
+          <h2 class="font-serif text-3xl mb-2">Interested in partnering with us?</h2>
+          <p>Get in touch with our team to learn more.</p>
+          <form class="w-full flex flex-col justify-center items-center">
+            <FormInput name="name" placeholder="Name" type="sm"/>
+            <FormInput name="email" placeholder="Email" type="sm"/>
+            <FormInput name="message" placeholder="Message" type="lg"/>
+            <GlobalBtn>Submit</GlobalBtn>
+          </form>
+        </div>
+      </div>
     </div>
   </div>
 </template>
 
-
+<script>
+export default {
+  
+}
+</script>

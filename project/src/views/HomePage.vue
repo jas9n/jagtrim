@@ -1,3 +1,6 @@
+<script setup>
+import GlobalBtn from '../components/GlobalBtn.vue'
+</script>
 <template>
   <div id="home">
     <div id="landing" class="w-full h-screen flex justify-center items-center">
@@ -18,14 +21,13 @@
       </div>
     </div>
     <div id="collection" class="w-full h-[80vh] flex flex-col justify-center items-center">
-      <h2 class="font-serif text-3xl pb-2">Collection</h2>
       <div class="grid grid-flow-row grid-cols-3 justify-center items-center">
         <div v-for="(button, index) in buttons" :key="index" class="flex flex-col justify-center items-center w-48 h-48 bg-zinc-200 mx-8 my-4 rounded-2xl">
           <h3>{{ button }}</h3>
         </div>
-       
       </div>
-      <button>View Full Collection</button>
+      <GlobalBtn>See More</GlobalBtn>
+      
     </div>
     
   </div>

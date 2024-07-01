@@ -1,6 +1,7 @@
 <script setup>
 import { RouterLink, RouterView } from 'vue-router'
 import GlobalNav from './components/GlobalNav.vue';
+import GlobalFooter from './components/GlobalFooter.vue';
 </script>
 
 <template>
@@ -8,6 +9,9 @@ import GlobalNav from './components/GlobalNav.vue';
     <GlobalNav />
   </header>
   <RouterView />
+  <footer>
+    <GlobalFooter />
+  </footer>
 </template>
 
 <style>
