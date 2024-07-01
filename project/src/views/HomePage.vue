@@ -1,5 +1,6 @@
 <script setup>
 import GlobalBtn from '../components/GlobalBtn.vue'
+import { gsap } from 'gsap'
 </script>
 <template>
   <div id="home">
@@ -43,6 +44,8 @@ export default {
     },
     created() {
         window.addEventListener("scroll", this.scroll)
+    },
+    mounted() {
     },
     methods: {
         scroll() {
