@@ -4,7 +4,7 @@
             <RouterLink to="/"><img src="@/assets/images/logo.svg" alt="JagTrim International" class="h-12"></RouterLink>
             <ul class="flex justify-center space-x-12 font-medium">
                 <li><a id="underline" class="relative inline-block" href="/#about">About</a></li>
-                <li><a id="underline" class="relative inline-block" href="/#products">Products</a></li>
+                <li><a id="underline" class="relative inline-block" href="/#collection">Collection</a></li>
                 <li><RouterLink to="/contact" id="underline" class="relative inline-block">Contact</RouterLink></li>
             </ul>
         </nav>
