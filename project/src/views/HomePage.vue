@@ -1,10 +1,13 @@
 <script setup>
 import GlobalBtn from '../components/GlobalBtn.vue'
 import { gsap } from 'gsap'
+import ScrollTrigger from "gsap/ScrollTrigger";
+gsap.registerPlugin(ScrollTrigger);
+
 </script>
 <template>
   <div id="home">
-    <div id="landing" class="w-screen h-screen flex justify-center items-center ">
+    <div id="landing" class="w-screen h-screen flex justify-center items-center z-10">
       <img id="landing-img" src="../assets/images/landing.svg" alt="" class="absolute -z-10 top-0">
       <img id="monogram1" src="../assets/images/monogram-bg.svg" class="absolute w-[50vw] left-0" alt="">
       <img id="monogram2" src="../assets/images/monogram-bg.svg" class="absolute w-[50vw] right-0" alt="">
@@ -15,9 +18,9 @@ import { gsap } from 'gsap'
         </h1>
       </div>
     </div>
-    <div id="about" class="w-full h-[60vh] flex justify-center items-center z-10">
+    <div id="about" class="w-full h-[60vh] flex justify-center items-center z-20 bg-white">
       <div class="flex flex-col items-center justify-center w-1/2 space-y-2">
-        <h2 class="font-serif text-4xl pb-2">Reimagining Button Freedom</h2>
+        <h2 class="font-serif text-4xl pb-2" id="trigger">Reimagining Button Freedom</h2>
       <p class="text-lg text-center">
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit ipsum ad amet natus magni aperiam doloremque temporibus iure quae ullam placeat corporis tempora doloribus, nihil id. Tempore doloremque quaerat sed.
       </p>
@@ -55,13 +58,14 @@ export default {
 
       var scroll = gsap.timeline({
         scrollTrigger: {
-          trigger: '#about',
-          start: 'top center',
-          end: 'top top',
-          scrub: 1,
+          trigger: '#trigger',
+          start: 'top bottom',
+          end: 'center center',
+          scrub: 0.2,
         }
       })
-      scroll.fromTo('#landing-img', {y:0},{y:-200}, 0)
+      scroll.fromTo('#landing', {y:0},{y: 160}, 0)
+      scroll.fromTo('#about', {y:0}, {y:0}, 0)
 
       
     },
