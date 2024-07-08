@@ -8,11 +8,17 @@ import GlobalFooter from './components/GlobalFooter.vue';
   <header>
     <GlobalNav />
   </header>
-  <RouterView />
+  <body>
+    <RouterView />
+  </body>
   <footer>
     <GlobalFooter />
   </footer>
 </template>
 
 <style>
+html {
+  max-width: 100%;
+  overflow-x: hidden;
+}
 </style>

@@ -1,6 +1,6 @@
 <template>
     <div id="footer">
-        <div class="w-full h-[50vh] flex flex-col justify-center items-center">
+        <div class="w-full h-[50vh] flex flex-col justify-center items-center z-10 bg-white">
             <img src="../assets/images/logo.svg" alt="JagTrim International" class="h-16 mb-8">
             <ul class="flex justify-center items-center space-x-16 font-medium mb-8 text-zinc-500">
                 <li><a href="">Home</a></li>
