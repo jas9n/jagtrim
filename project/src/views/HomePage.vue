@@ -21,7 +21,7 @@ gsap.registerPlugin(ScrollTrigger);
     </div>
     <div id="about" class="w-full h-[60vh] flex justify-center items-center z-20 bg-white">
       <div class="flex flex-col items-center justify-center w-1/2 space-y-2">
-        <h2 class="font-serif text-4xl pb-2" id="trigger">Reimagining Button Freedom</h2>
+        <h2 class="font-serif text-4xl pb-2">Reimagining Button Freedom</h2>
       <p class="text-lg text-center">
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit ipsum ad amet natus magni aperiam doloremque temporibus iure quae ullam placeat corporis tempora doloribus, nihil id. Tempore doloremque quaerat sed.
       </p>
@@ -29,9 +29,10 @@ gsap.registerPlugin(ScrollTrigger);
     </div>
     <div id="collection" class="w-full h-[90vh] flex flex-col justify-center items-center">
       <div class="grid grid-flow-row grid-cols-3 justify-center items-center">
-        <ProductDisplay v-for="(button, index) in buttons" :key="index" :button="button"/>
+        <ProductDisplay id='product' v-for="(button, index) in buttons" :key="index" :button="button"/>
       </div>
-      <GlobalBtn>See More</GlobalBtn>
+      <RouterLink to="/collection"><GlobalBtn>See More</GlobalBtn></RouterLink>
+      
     </div>
     
   </div>
@@ -54,17 +55,25 @@ export default {
       inital.to('#monogram2', {x: 750, opacity: 0.1, duration: 1.5}, 0.3)
       inital.from('#title', {y: -50, opacity: 0.0, duration: 1}, 1.4)
 
-      var scroll = gsap.timeline({
+      var parallax = gsap.timeline({
         scrollTrigger: {
-          trigger: '#trigger',
+          trigger: '#about',
           start: 'top bottom',
           end: 'center center',
           scrub: 0.2,
         }
       })
-      scroll.fromTo('#landing', {y:0},{y: 160}, 0)
-      scroll.fromTo('#about', {y:0}, {y:0}, 0)
+      parallax.fromTo('#landing', {y:0},{y: 175}, 0)
+      parallax.fromTo('#about', {y:0}, {y:0}, 0)
 
+      var collection = gsap.timeline({
+        scrollTrigger: {
+          trigger: '#collection',
+          start: 'top bottom',
+        }
+      })
+
+      collection.from('#product', {y: -30, opacity: 0.3, stagger: 0.1})
       
     },
     methods: {

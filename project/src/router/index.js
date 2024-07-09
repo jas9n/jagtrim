@@ -16,7 +16,15 @@ const router = createRouter({
       // this generates a separate chunk (About.[hash].js) for this route
       // which is lazy-loaded when the route is visited.
       component: () => import('../views/ContactPage.vue')
-    }
+    },
+    {
+      path: '/collection',
+      name: 'collection',
+      // route level code-splitting
+      // this generates a separate chunk (About.[hash].js) for this route
+      // which is lazy-loaded when the route is visited.
+      component: () => import('../views/collection/index.vue')
+    },
   ],
   scrollBehavior(to, from, savedPosition) {
     // always scroll to top
@@ -25,7 +33,14 @@ const router = createRouter({
         el: to.hash,
         behavior: 'smooth',
       }
-    } else {
+    } else if (to.path) {
+      return {
+        el: to.path,
+        top: 0,
+        behavior: 'smooth',
+      }
+    }
+    else {
       return { 
         top: 0,
         behavior: 'smooth',

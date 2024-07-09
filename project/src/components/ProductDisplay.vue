@@ -1,5 +1,5 @@
 <template>
-  <div class="draw meet group flex flex-col justify-center items-center w-72 h-72  mx-8 my-4">
+  <div class="draw meet group flex flex-col justify-center items-center w-72 h-72  mx-8 my-4 rounded">
     <div class="bg-black w-full h-full absolute opacity-0 group-hover:opacity-10 transition duration-200 ease-out"></div>
     <h3>{{ button }}</h3>
   </div>
@@ -20,10 +20,8 @@ export default {
   box-sizing: border-box;
   margin: 1em;
   padding: 1em 2em;
-  box-shadow: inset 0 0 0 2px #000;
+  box-shadow: inset 0 0 0 1.5px #000;
   color: #000;
-  font-size: inherit;
-  font-weight: 700;
   position: relative;
   vertical-align: middle;
   }
