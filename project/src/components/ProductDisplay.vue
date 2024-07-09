@@ -1,121 +1,88 @@
 <template>
-
+  <div id="draw meet" class="flex flex-col justify-center items-center w-48 h-48 bg-zinc-200 mx-8 my-4 rounded-2xl bg-none border-0 box-border ">
+    <h3>{{ button }}</h3>
+  </div>
 </template>
 
+<script>
+export default {
+  props: {
+    button: String,
+  }
+}
+</script>
+
 <style scoped>
-.draw {
+#draw {
     transition: color 0.25s;
 }
 
-.draw::before, .draw::after {
-    /*  Set border to invisible, so we don't see a 4px border on a 0x0 element before the transition starts
-    border: 2px solid transparent; */
+#draw::before, #draw::after {
     width: 0;
     height: 0;
 }
 
-  // This covers the top & right borders (expands right, then down)
-.draw::after::before {
+
+#draw::after::before {
     top: 0;
     left: 0;
   }
 
-  // And this the bottom & left borders (expands left, then up)
-  &::after {
+
+  #draw::after {
     bottom: 0;
     right: 0;
   }
   
-  &:hover {
+  #draw:hover {
     color: $cyan;
   }
 
-  // Hover styles
-  &:hover::before,
-  &:hover::after {
+  #draw:hover::before,
+  #draw:hover::after {
     width: 100%;
     height: 100%;
   }
 
-  &:hover::before {
-    border-top-color: $cyan; // Make borders visible
-    border-right-color: $cyan;
+  #draw:hover::before {
+    border-top-color: black; 
+    border-right-color: black;
     transition:
-      width 0.25s ease-out, // Width expands first
-      height 0.25s ease-out 0.25s; // And then height
+      width 0.25s ease-out,
+      height 0.25s ease-out 0.25s; 
   }
 
-  &:hover::after {
-    border-bottom-color: $cyan; // Make borders visible
-    border-left-color: $cyan;
+  #draw:hover::after {
+    border-bottom-color: black; 
+    border-left-color: black;
     transition:
-      border-color 0s ease-out 0.5s, // Wait for ::before to finish before showing border
-      width 0.25s ease-out 0.5s, // And then exanding width
-      height 0.25s ease-out 0.75s; // And finally height
+      border-color 0s ease-out 0.5s,
+      width 0.25s ease-out 0.5s, 
+      height 0.25s ease-out 0.75s;
   }
 
-// Inherits from .draw
-.meet {
-  
-  &:hover {
-    color: $yellow;
+/* // Inherits from .draw */
+#meet:hover {
+    color: black;
   }
 
-  // Start ::after in same position as ::before
-  &::after {
+
+  #meet::after {
     top: 0;
     left: 0;
   }
 
-  // Change colors
-  &:hover::before {
-    border-top-color: $yellow;
-    border-right-color: $yellow;
+  
+  #meet:hover::before {
+    border-top-color: black;
+    border-right-color: black;
   }
 
-  &:hover::after {
-    border-bottom-color: $yellow;
-    border-left-color: $yellow;
-    transition: // Animate height first, then width
+  #meet:hover::after {
+    border-bottom-color: black;
+    border-left-color: black;
+    transition: 
       height 0.25s ease-out,
       width 0.25s ease-out 0.25s;
   }
-
-}
-
-// Does not inherit
-.center {
-  &:hover {
-    color: $purple;
-  }
-
-  // Set up base styles, we're going to scale instead of animating width/height
-  &::before,
-  &::after {
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 100%;
-    transform-origin: center; // Ensure scaling is done from the center (expands outwards)
-  }
-
-  /* // scale3d(<scale-horizontal>, <scale-vertical>, <scale-depth>); */
-  &::before {
-    border-top: 2px solid $purple;
-    border-bottom: 2px solid $purple;
-    transform: scale3d(0,1,1); // Shrink only width
-  }
-
-  &::after {
-    border-left: 2px solid $purple;
-    border-right: 2px solid $purple;
-    transform: scale3d(1,0,1); // Shrink only height
-  }
-
-  &:hover::before,
-  &:hover::after {
-    transform: scale3d(1,1,1); // Show full-size
-    transition: transform 0.5s;
-  }
-}
 </style>

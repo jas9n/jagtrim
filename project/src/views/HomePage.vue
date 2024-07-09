@@ -1,5 +1,6 @@
 <script setup>
 import GlobalBtn from '../components/GlobalBtn.vue'
+import ProductDisplay from '@/components/ProductDisplay.vue';
 import { gsap } from 'gsap'
 import ScrollTrigger from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
@@ -28,9 +29,7 @@ gsap.registerPlugin(ScrollTrigger);
     </div>
     <div id="collection" class="w-full h-[80vh] flex flex-col justify-center items-center">
       <div class="grid grid-flow-row grid-cols-3 justify-center items-center">
-        <div v-for="(button, index) in buttons" :key="index" class="flex flex-col justify-center items-center w-48 h-48 bg-zinc-200 mx-8 my-4 rounded-2xl">
-          <h3>{{ button }}</h3>
-        </div>
+        <ProductDisplay v-for="(button, index) in buttons" :key="index" :button="button"/>
       </div>
       <GlobalBtn>See More</GlobalBtn>
       
