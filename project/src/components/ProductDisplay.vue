@@ -1,5 +1,6 @@
 <template>
-  <div id="draw meet" class="flex flex-col justify-center items-center w-48 h-48 bg-zinc-200 mx-8 my-4 rounded-2xl bg-none border-0 box-border ">
+  <div class="draw meet group flex flex-col justify-center items-center w-72 h-72  mx-8 my-4">
+    <div class="bg-black w-full h-full absolute opacity-0 group-hover:opacity-10 transition duration-200 ease-out"></div>
     <h3>{{ button }}</h3>
   </div>
 </template>
@@ -13,76 +14,98 @@ export default {
 </script>
 
 <style scoped>
-#draw {
-    transition: color 0.25s;
-}
-
-#draw::before, #draw::after {
-    width: 0;
-    height: 0;
-}
-
-
-#draw::after::before {
-    top: 0;
-    left: 0;
+  .draw {
+  background: none;
+  border: 0;
+  box-sizing: border-box;
+  margin: 1em;
+  padding: 1em 2em;
+  box-shadow: inset 0 0 0 2px #000;
+  color: #000;
+  font-size: inherit;
+  font-weight: 700;
+  position: relative;
+  vertical-align: middle;
   }
 
-
-  #draw::after {
-    bottom: 0;
-    right: 0;
-  }
-  
-  #draw:hover {
-    color: $cyan;
-  }
-
-  #draw:hover::before,
-  #draw:hover::after {
+  .draw::before,
+  .draw::after {
+    box-sizing: inherit;
+    content: '';
+    position: absolute;
     width: 100%;
     height: 100%;
   }
 
-  #draw:hover::before {
-    border-top-color: black; 
-    border-right-color: black;
-    transition:
-      width 0.25s ease-out,
-      height 0.25s ease-out 0.25s; 
+.draw {
+    transition: color 0.25s;
+}
+
+  .draw::before,
+  .draw::after {
+    border: 2px solid transparent;
+    width: 0;
+    height: 0;
   }
 
-  #draw:hover::after {
-    border-bottom-color: black; 
-    border-left-color: black;
-    transition:
-      border-color 0s ease-out 0.5s,
-      width 0.25s ease-out 0.5s, 
-      height 0.25s ease-out 0.75s;
-  }
-
-/* // Inherits from .draw */
-#meet:hover {
-    color: black;
-  }
-
-
-  #meet::after {
+  .draw::before {
     top: 0;
     left: 0;
   }
 
+  .draw::after {
+    bottom: 0;
+    right: 0;
+  }
   
-  #meet:hover::before {
-    border-top-color: black;
-    border-right-color: black;
+  .draw:hover {
+    color: #fff;
   }
 
-  #meet:hover::after {
-    border-bottom-color: black;
-    border-left-color: black;
+  .draw:hover::before,
+  .draw:hover::after {
+    width: 100%;
+    height: 100%;
+  }
+
+  .draw:hover::before {
+    border-top-color: #fff; 
+    border-right-color: #fff;
+    transition:
+      width 0.25s ease-out, 
+      height 0.25s ease-out 0.25s; 
+  }
+
+  .draw:hover::after {
+    border-bottom-color: #fff;
+    border-left-color: #fff;
+    transition:
+      border-color 0s ease-out 0.5s, 
+      width 0.25s ease-out 0.5s, 
+      height 0.25s ease-out 0.75s; 
+  }
+
+.meet:hover {
+    color: #fff;
+  }
+
+  .meet::after {
+    top: 0;
+    left: 0;
+  }
+
+  .meet:hover::before {
+    border-top-color: #fff;
+    border-right-color: #fff;
+  }
+
+  .meet:hover::after {
+    border-bottom-color: #fff;
+    border-left-color: #fff;
     transition: 
       height 0.25s ease-out,
       width 0.25s ease-out 0.25s;
   }
+
+
 </style>

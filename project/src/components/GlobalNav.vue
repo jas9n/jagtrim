@@ -3,9 +3,9 @@
         <nav :class="{ sticky: nav }" class="fixed top-0 flex justify-between items-center w-full px-16 py-6 z-50 bg-transparent">
             <RouterLink to="/"><img src="@/assets/images/logo.svg" alt="JagTrim International" class="h-12"></RouterLink>
             <ul class="flex justify-center space-x-12 font-medium">
-                <li><a id="underline" class="relative inline-block" href="/#about">About</a></li>
-                <li><a id="underline" class="relative inline-block" href="/#collection">Collection</a></li>
-                <li><RouterLink to="/contact" id="underline" class="relative inline-block">Contact</RouterLink></li>
+                <li><a class="line relative inline-block" href="/#about">About</a></li>
+                <li><a class="line relative inline-block" href="/#collection">Collection</a></li>
+                <li><RouterLink to="/contact" class="line relative inline-block">Contact</RouterLink></li>
             </ul>
         </nav>
     </div>
@@ -47,7 +47,7 @@ nav:hover {
     transition: background 0.3s ease;
 }
 
-#underline:after {
+.line:after {
   background: none repeat scroll 0 0 transparent;
   bottom: 0;
   content: '';
@@ -61,7 +61,7 @@ nav:hover {
   width: 0;
 }
 
-#underline:hover:after {
+.line:hover:after {
   width: 100%;
   left: 0;
 }

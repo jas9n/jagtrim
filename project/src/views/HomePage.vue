@@ -27,12 +27,11 @@ gsap.registerPlugin(ScrollTrigger);
       </p>
       </div>
     </div>
-    <div id="collection" class="w-full h-[80vh] flex flex-col justify-center items-center">
+    <div id="collection" class="w-full h-[90vh] flex flex-col justify-center items-center">
       <div class="grid grid-flow-row grid-cols-3 justify-center items-center">
         <ProductDisplay v-for="(button, index) in buttons" :key="index" :button="button"/>
       </div>
       <GlobalBtn>See More</GlobalBtn>
-      
     </div>
     
   </div>
