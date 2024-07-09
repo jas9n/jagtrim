@@ -20,10 +20,11 @@ const router = createRouter({
     {
       path: '/collection',
       name: 'collection',
-      // route level code-splitting
-      // this generates a separate chunk (About.[hash].js) for this route
-      // which is lazy-loaded when the route is visited.
-      component: () => import('../views/collection/index.vue')
+      children: [
+        {path: '', component: () => import('../views/collection/index.vue')},
+        {path: ':id', component: () => import('../views/collection/_product.vue')}
+      ],
+      
     },
   ],
   scrollBehavior(to, from, savedPosition) {

@@ -10,8 +10,8 @@ gsap.registerPlugin(ScrollTrigger);
   <div id="home">
     <div id="landing" class="w-screen h-screen flex justify-center items-center z-10">
       <img id="landing-img" src="../assets/images/landing.svg" alt="" class="absolute -z-10 top-0">
-      <img id="monogram1" src="../assets/images/monogram-bg.svg" class="absolute w-[50vw] left-0" alt="">
-      <img id="monogram2" src="../assets/images/monogram-bg.svg" class="absolute w-[50vw] right-0" alt="">
+      <img id="monogram1" src="../assets/images/monogram-j.svg" class="absolute w-full top-0 " alt="">
+      <img id="monogram2" src="../assets/images/monogram-t.svg" class="absolute w-full top-0 " alt="">
       <div class="flex justify-center items-start absolute right-40">
         <h1 id="title" class="flex flex-col items-end space-y-2 pb-2 font-serif text-7xl">
           <span>Elevating fashion, </span>
@@ -27,7 +27,9 @@ gsap.registerPlugin(ScrollTrigger);
       </p>
       </div>
     </div>
-    <div id="collection" class="w-full h-[90vh] flex flex-col justify-center items-center">
+    <div id="collection" class="w-full h-[90vh] flex flex-col justify-center items-center relative">
+      <img id="monogram3" src="../assets/images/monogram-j.svg" class="absolute w-full top-0 opacity-10" alt="">
+      <img id="monogram4" src="../assets/images/monogram-t.svg" class="absolute w-full top-0 opacity-10" alt="">
       <div class="grid grid-flow-row grid-cols-3 justify-center items-center">
         <ProductDisplay id='product' v-for="(button, index) in buttons" :key="index" :button="button"/>
       </div>
@@ -51,9 +53,10 @@ export default {
     },
     mounted() {
       var inital = gsap.timeline()
-      inital.to('#monogram1', {x: -750, opacity: 0.1, duration: 1.5}, 0.3)
-      inital.to('#monogram2', {x: 750, opacity: 0.1, duration: 1.5}, 0.3)
-      inital.from('#title', {y: -50, opacity: 0.0, duration: 1}, 1.4)
+      inital.to('#monogram1', {x: -1500,  opacity: 0.1, duration: 2.3}, 0.3)
+      inital.to('#monogram2', {x: 1500, opacity: 0.1, duration: 2.3}, 0.3)
+      inital.from('#title', {y: -50, opacity: 0.0, duration: 1}, 1.8)
+      
 
       var parallax = gsap.timeline({
         scrollTrigger: {
@@ -74,6 +77,8 @@ export default {
       })
 
       collection.from('#product', {y: -30, opacity: 0.3, stagger: 0.1})
+      collection.from('#monogram3', {x: -1500,  opacity: 1, duration: 2.3}, 0.3)
+      collection.from('#monogram4', {x: 1500, opacity: 1, duration: 2.3}, 0.3)
       
     },
     methods: {
