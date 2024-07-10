@@ -1,7 +1,8 @@
 <script setup>
 import GlobalBtn from '../components/GlobalBtn.vue'
 import ProductDisplay from '@/components/ProductDisplay.vue';
-import { gsap } from 'gsap'
+import PhotoGallery from '@/components/PhotoGallery.vue';
+import { gsap } from 'gsap';
 import ScrollTrigger from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 
@@ -28,15 +29,19 @@ gsap.registerPlugin(ScrollTrigger);
       </div>
     </div>
     <div id="collection" class="w-full h-[90vh] flex flex-col justify-center items-center relative">
-      <img id="monogram3" src="../assets/images/monogram-j.svg" class="absolute w-full top-0 opacity-10" alt="">
-      <img id="monogram4" src="../assets/images/monogram-t.svg" class="absolute w-full top-0 opacity-10" alt="">
+      <!-- <img id="monogram3" src="../assets/images/monogram-j.svg" class="absolute w-full top-0 opacity-10" alt="">
+      <img id="monogram4" src="../assets/images/monogram-t.svg" class="absolute w-full top-0 opacity-10" alt=""> -->
       <div class="grid grid-flow-row grid-cols-3 justify-center items-center">
-        <ProductDisplay id='product' v-for="(button, index) in buttons" :key="index" :button="button"/>
+        <ProductDisplay id='product' v-for="(item, index) in collection" :key="index" :product="item"/>
       </div>
       <RouterLink to="/collection"><GlobalBtn>See More</GlobalBtn></RouterLink>
       
     </div>
-    
+    <div id="gallery" class="w-full h-screen flex justify-center items-center">
+      <div id="flex justify-center items-center">
+        <PhotoGallery />
+      </div>
+    </div>
   </div>
 </template>
 
@@ -45,11 +50,8 @@ export default {
   name: "HomePage",
     data() {
         return {
-            buttons: ['button #1', 'button #2', 'button #3', 'button #4', 'lia li #5', 'amanda', ],
+            collection: ['button #1', 'button #2', 'button #3', 'button #4', 'lia li #5', 'amanda', ],
         }
-    },
-    created() {
-        window.addEventListener("scroll", this.scroll)
     },
     mounted() {
       var inital = gsap.timeline()
@@ -77,18 +79,12 @@ export default {
       })
 
       collection.from('#product', {y: -30, opacity: 0.3, stagger: 0.1})
-      collection.from('#monogram3', {x: -1500,  opacity: 1, duration: 2.3}, 0.3)
-      collection.from('#monogram4', {x: 1500, opacity: 1, duration: 2.3}, 0.3)
       
     },
     methods: {
-        scroll() {
-            if (window.scrollY > 0) {
-                this.nav = true
-            } else {
-                this.nav = false
-            }
-        },
+      getImg(img) {
+      return img ? require("@/assets/images/" + img) : "";
+    }
     }
 }
 </script>

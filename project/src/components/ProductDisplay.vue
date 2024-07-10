@@ -1,14 +1,14 @@
 <template>
   <div class="draw meet group flex flex-col justify-center items-center w-72 h-72  mx-8 my-4 rounded">
     <div class="bg-black w-full h-full absolute opacity-0 group-hover:opacity-10 transition duration-200 ease-out"></div>
-    <h3>{{ button }}</h3>
+    <h3>{{ product }}</h3>
   </div>
 </template>
 
 <script>
 export default {
   props: {
-    button: String,
+    product: String,
   }
 }
 </script>
