@@ -1,5 +1,5 @@
 <script setup>
-import ProductDisplay from '@/components/ProductDisplay.vue';
+import ProductDisplay from '@/components/ProductItem.vue';
 </script>
 
 <template>

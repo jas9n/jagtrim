@@ -13,7 +13,6 @@
 
 <script>
 export default {
-    name: "GlobalNav",
     data() {
         return {
             nav: false

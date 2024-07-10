@@ -1,0 +1,29 @@
+<script setup>
+import gsap from 'gsap'
+</script>
+
+<template>
+    <div id="landing" class="w-screen h-screen flex justify-center items-center z-10">
+      <img id="landing-img" src="@/assets/images/landing.svg" alt="" class="absolute -z-10 top-0">
+      <img id="monogram1" src="@/assets/images/monogram-j.svg" class="absolute w-full top-0 " alt="">
+      <img id="monogram2" src="@/assets/images/monogram-t.svg" class="absolute w-full top-0 " alt="">
+      <div class="flex justify-center items-start absolute right-40">
+        <h1 id="title" class="flex flex-col items-end space-y-2 pb-2 font-serif text-7xl">
+          <span>Elevating fashion, </span>
+          <span>one button at a time.</span> 
+        </h1>
+      </div>
+    </div>
+</template>
+
+<script>
+export default {
+    name: 'LandingView',
+    mounted() {
+        var inital = gsap.timeline()
+        inital.to('#monogram1', {x: -1500,  opacity: 0.1, duration: 2.3}, 0.3)
+        inital.to('#monogram2', {x: 1500, opacity: 0.1, duration: 2.3}, 0.3)
+        inital.from('#title', {y: -50, opacity: 0.0, duration: 1}, 1.8)
+    }
+}
+</script>

@@ -1,21 +1,23 @@
+<script setup>
+import gsap from 'gsap'
+</script>
+
 <template>
-    <div id="gallery">
-    <transition-group name="fade" tag="div">
-      <div v-for="i in [currentIndex]" :key="i">
-        <img :src="currentImg" class="h-[80vh]"/>
-      </div>
-    </transition-group>
-    <a id="prev" class="cursor-pointer absolute top-[40%] w-auto p-4 text-white" @click="prev" href="#">&#10094; Previous</a>
-    <a id="next" class="cursor-pointer absolute top-[40%] w-auto p-4 text-white" @click="next" href="#">&#10095; Next</a>
+    <div id="gallery" class="flex justify-center items-center relative">
+        <div v-for="i in [currentIndex]" :key="i">
+          <img :src="currentImg" class="h-[85vh] w-full"/>
+        </div>
+    <p id="prev" class="cursor-pointer absolute top-[50%] w-auto p-4 text-white text-2xl" @click="prev">&#10094;</p>
+    <p id="next" class="cursor-pointer absolute top-[50%] w-auto p-4 text-white text-2xl" @click="next">&#10095;</p>
   </div>
 </template>
 
 <script>
 export default {
-    name: "Gallery",
     data() {
         return {
-            images: ['landing.svg'],
+            images: ["https://cdn.pixabay.com/photo/2015/12/12/15/24/amsterdam-1089646_1280.jpg",
+            "https://cdn.pixabay.com/photo/2016/12/04/19/30/berlin-cathedral-1882397_1280.jpg"],
             timer: null,
             currentIndex: 0,
         }
@@ -25,7 +27,7 @@ export default {
     },
     methods: {
         start() {
-            this.timer = setInterval(this.next, 5000);
+            this.timer = setInterval(this.next, 10000);
         },
         next() {
             this.currentIndex += 1;
@@ -34,8 +36,8 @@ export default {
             this.currentIndex -= 1;
         }
     },
-    computed() {
-        currentImg() {
+    computed: {
+      currentImg() {
             return this.images[Math.abs(this.currentIndex) % this.images.length]
         }
     }
@@ -44,23 +46,6 @@ export default {
 </script>
 
 <style scoped>
-.fade-enter-active,
-.fade-leave-active {
-  transition: all 0.9s ease;
-  overflow: hidden;
-  visibility: visible;
-  position: absolute;
-  width:100%;
-  opacity: 1;
-}
-
-.fade-enter,
-.fade-leave-to {
-  visibility: hidden;
-  width:100%;
-  opacity: 0;
-}
-
 #prev, #next {
     transition: 0.7s ease;
     border-radius: 0 4px 4px 0;
