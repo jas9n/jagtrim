@@ -1,6 +1,6 @@
 <template>
     <div id="nav">
-        <nav :class="{ sticky: nav }" class="fixed top-0 flex justify-between items-center w-full px-16 py-6 z-50 bg-transparent">
+        <nav :class="{ sticky: nav }" class="fixed top-0 flex justify-between items-center w-full px-16 py-4 z-50 bg-transparent">
             <RouterLink to="/"><img src="@/assets/images/logo.svg" alt="JagTrim International" class="h-12"></RouterLink>
             <ul class="flex justify-center space-x-12 font-medium">
                 <li><a class="line relative inline-block" href="/#about">About</a></li>

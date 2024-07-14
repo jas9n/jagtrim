@@ -1,6 +1,5 @@
 <script setup>
 import LandingView from '@/components/LandingView.vue'
-import SketchParallax from '@/components/SketchParallax.vue'
 import GlobalBtn from '@/components/GlobalBtn.vue'
 import ProductItem from '@/components/ProductItem.vue';
 import PhotoGallery from '@/components/PhotoGallery.vue';
@@ -22,8 +21,9 @@ import ScrollTrigger from "gsap/ScrollTrigger";
       </p>
       </div>
     </div>
-    <div id="sketch">
-      <SketchParallax />
+    <div id="sketch" class="w-full h-screen flex justify-center items-center">
+        <img id="img" src="https://images.unsplash.com/photo-1469474968028-56623f02e42e?q=80&w=2948&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="" class="h-screen w-full">
+        <div id="mask" class="w-1/3 h-screen bg-black absolute left-0"></div>
     </div>
     <div id="collection" class="w-full h-[90vh] flex flex-col justify-center items-center relative">
       <!-- <img id="monogram3" src="../assets/images/monogram-j.svg" class="absolute w-full top-0 opacity-10" alt="">
@@ -50,7 +50,8 @@ export default {
     },
     mounted() {
       gsap.registerPlugin(ScrollTrigger);
-      var parallax = gsap.timeline({
+      
+      var about = gsap.timeline({
         scrollTrigger: {
           trigger: '#about',
           start: 'top bottom',
@@ -58,8 +59,20 @@ export default {
           scrub: 0.2,
         }
       })
-      parallax.fromTo('#landing', {y:0},{y: 150}, 0)
-      parallax.fromTo('#about', {y:0}, {y:0}, 0)
+      about.fromTo('#landing', {y:0},{y: 140}, 0)
+      about.fromTo('#about', {y:0}, {y:0}, 0)
+
+      var sketch = gsap.timeline({
+        scrollTrigger: {
+          trigger: '#sketch',
+          start: 'top top',
+          end: 'bottom 250vh',
+          pin: '#sketch',
+          scrub: 0.2,
+        }
+      })
+      sketch.fromTo('#mask', {x:0},{x: 1000}, 0)
+      sketch.fromTo('#img', {x:0}, {x:0}, 0)
 
       var collection = gsap.timeline({
         scrollTrigger: {
@@ -71,10 +84,5 @@ export default {
       collection.from('#product', {y: -30, opacity: 0.3, stagger: 0.1})
       
     },
-    methods: {
-      getImg(img) {
-      return img ? require("@/assets/images/" + img) : "";
-    }
-    }
 }
 </script>
