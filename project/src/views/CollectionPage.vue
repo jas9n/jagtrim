@@ -9,7 +9,7 @@ const itemStore = useItemStore()
       <div class="grid grid-flow-row grid-cols-3 justify-center items-center">
         <div v-for="item in itemStore.items">
           <RouterLink :to="{ name: 'product', params: {id: item.id }}">
-            <ProductItem :product="item.name"/>
+            <ProductItem :item="item.name" :photo="item.photo"/>
           </RouterLink>
           
         </div>
@@ -29,6 +29,6 @@ export default {
       // const taskStore = useTaskStore()
 
       // return { taskStore }
-    }
+    },
 }
 </script>

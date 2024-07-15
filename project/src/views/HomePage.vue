@@ -28,18 +28,18 @@ const itemStore = useItemStore()
         <img id="img" src="https://images.unsplash.com/photo-1469474968028-56623f02e42e?q=80&w=2948&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="" class="h-screen w-full">
         <div id="mask" class="w-1/3 h-screen bg-black absolute left-0"></div>
     </div>
-    <div id="collection" class="w-full h-[90vh] flex flex-col justify-center items-center relative">
+    <div id="collection" class="w-full h-[120vh] flex flex-col justify-center items-center relative">
       <!-- <img id="monogram3" src="../assets/images/monogram-j.svg" class="absolute w-full top-0 opacity-10" alt="">
       <img id="monogram4" src="../assets/images/monogram-t.svg" class="absolute w-full top-0 opacity-10" alt=""> -->
-      <div id="product" class="grid grid-flow-row grid-cols-3 justify-center items-center">
-        <div  v-for="item in itemStore.items">
-          <RouterLink :to="{ name: 'product', params: {id: item.id }}">
-            <ProductItem :product="item.name"/>
-          </RouterLink>
-        </div>
+      
+        <div class="grid grid-flow-row grid-cols-3 justify-center items-center">
+          <div id="product" v-for="item in itemStore.items">
+            <RouterLink :to="{ name: 'product', params: {id: item.id }}">
+              <ProductItem :item="item.name" :photo="item.photo"/>
+            </RouterLink>
+          </div>
       </div>
       <RouterLink to="/collection"><GlobalBtn>See More</GlobalBtn></RouterLink>
-      
     </div>
     <div id="gallery" class="w-full h-screen flex justify-center items-center">
       <PhotoGallery />
@@ -52,14 +52,7 @@ export default {
   name: "HomePage",
     data() {
         return {
-            collection: [
-              {id: 1, name: 'button1', photo: '@/assets/images/collection/button1.svg'},
-              {id: 2, name: 'button2', photo: '@/assets/images/collection/button2.svg'},
-              {id: 3, name: 'button3', photo: '@/assets/images/collection/button3.svg'},
-              {id: 4, name: 'button4', photo: '@/assets/images/collection/button4.svg'},
-              {id: 5, name: 'button5', photo: '@/assets/images/collection/button5.svg'},
-              {id: 6, name: 'button6', photo: '@/assets/images/collection/button6.svg'},
-            ],
+            
         }
     },
     setup() {
