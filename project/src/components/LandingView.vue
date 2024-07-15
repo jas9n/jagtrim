@@ -4,7 +4,7 @@ import gsap from 'gsap'
 
 <template>
     <div id="landing" class="w-screen h-screen flex justify-center items-center z-10">
-      <img id="landing-img" src="@/assets/images/landing.svg" alt="" class="absolute -z-10 top-0">
+      <img id="landing-img" src="@/assets/images/photos/landing.svg" alt="" class="absolute -z-10 top-0">
       <img id="monogram1" src="@/assets/images/monogram-j.svg" class="absolute w-full top-0 " alt="">
       <img id="monogram2" src="@/assets/images/monogram-t.svg" class="absolute w-full top-0 " alt="">
       <div class="flex justify-center items-start absolute right-40">

@@ -5,7 +5,11 @@ import ProductDisplay from '@/components/ProductItem.vue';
 <template>
     <div id="collection" class="w-full mt-24 flex flex-col justify-center items-center">
       <div class="grid grid-flow-row grid-cols-3 justify-center items-center">
-        <ProductDisplay v-for="(item, index) in collection" :key="index" :product="item"/>
+        <div  v-for="(item, index) in collection" :key="index">
+          <RouterLink :to="{ path: `/collection/${item}` }">
+            <ProductDisplay :product="item"/>
+          </RouterLink>
+        </div>
       </div>
     </div>
 </template>

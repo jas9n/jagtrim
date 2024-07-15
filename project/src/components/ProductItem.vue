@@ -1,6 +1,7 @@
 <template>
   <div class="draw meet group flex flex-col justify-center items-center w-72 h-72  mx-8 my-4 rounded">
-    <div class="bg-black w-full h-full absolute opacity-0 group-hover:opacity-10 transition duration-200 ease-out"></div>
+    <div class="bg-black w-full h-full absolute opacity-0 group-hover:opacity-10 transition duration-200 ease-out rounded"></div>
+    <img :src="photo" alt="">
     <h3>{{ product }}</h3>
   </div>
 </template>
@@ -9,6 +10,7 @@
 export default {
   props: {
     product: String,
+    photo: String,
   }
 }
 </script>
@@ -20,7 +22,7 @@ export default {
   box-sizing: border-box;
   margin: 1em;
   padding: 1em 2em;
-  box-shadow: inset 0 0 0 1.5px #000;
+  box-shadow: inset 0 0 0 1.5px #fff;
   color: #000;
   position: relative;
   vertical-align: middle;
@@ -57,7 +59,7 @@ export default {
   }
   
   .draw:hover {
-    color: #fff;
+    color: #000;
   }
 
   .draw:hover::before,
@@ -67,16 +69,16 @@ export default {
   }
 
   .draw:hover::before {
-    border-top-color: #fff; 
-    border-right-color: #fff;
+    border-top-color: #000; 
+    border-right-color: #000;
     transition:
       width 0.25s ease-out, 
       height 0.25s ease-out 0.25s; 
   }
 
   .draw:hover::after {
-    border-bottom-color: #fff;
-    border-left-color: #fff;
+    border-bottom-color: #000;
+    border-left-color: #000;
     transition:
       border-color 0s ease-out 0.5s, 
       width 0.25s ease-out 0.5s, 
@@ -84,7 +86,7 @@ export default {
   }
 
 .meet:hover {
-    color: #fff;
+    color: #ddd;
   }
 
   .meet::after {
@@ -93,13 +95,13 @@ export default {
   }
 
   .meet:hover::before {
-    border-top-color: #fff;
-    border-right-color: #fff;
+    border-top-color: #000;
+    border-right-color: #000;
   }
 
   .meet:hover::after {
-    border-bottom-color: #fff;
-    border-left-color: #fff;
+    border-bottom-color: #000;
+    border-left-color: #000;
     transition: 
       height 0.25s ease-out,
       width 0.25s ease-out 0.25s;

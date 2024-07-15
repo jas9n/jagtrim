@@ -29,7 +29,11 @@ import ScrollTrigger from "gsap/ScrollTrigger";
       <!-- <img id="monogram3" src="../assets/images/monogram-j.svg" class="absolute w-full top-0 opacity-10" alt="">
       <img id="monogram4" src="../assets/images/monogram-t.svg" class="absolute w-full top-0 opacity-10" alt=""> -->
       <div class="grid grid-flow-row grid-cols-3 justify-center items-center">
-        <ProductItem id='product' v-for="(item, index) in collection" :key="index" :product="item"/>
+        <div v-for="(item, index) in collection" :key="index">
+          <RouterLink :to="{ path: `/collection/${item.name}` }">
+            <ProductItem :product="item.name" :photo="item.photo"/>
+          </RouterLink>
+        </div>
       </div>
       <RouterLink to="/collection"><GlobalBtn>See More</GlobalBtn></RouterLink>
       
@@ -45,7 +49,14 @@ export default {
   name: "HomePage",
     data() {
         return {
-            collection: ['button #1', 'button #2', 'button #3', 'button #4', 'lia li #5', 'amanda', ],
+            collection: [
+              {id: 1, name: 'button1', photo: '@/assets/images/collection/button1.svg'},
+              {id: 2, name: 'button2', photo: '@/assets/images/collection/button2.svg'},
+              {id: 3, name: 'button3', photo: '@/assets/images/collection/button3.svg'},
+              {id: 4, name: 'button4', photo: '@/assets/images/collection/button4.svg'},
+              {id: 5, name: 'button5', photo: '@/assets/images/collection/button5.svg'},
+              {id: 6, name: 'button6', photo: '@/assets/images/collection/button6.svg'},
+            ],
         }
     },
     mounted() {
