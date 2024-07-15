@@ -1,6 +1,6 @@
 <template>
-  <div class="draw meet group flex flex-col justify-center items-center w-72 h-72  mx-8 my-4 rounded">
-    <div class="bg-black w-full h-full absolute opacity-0 group-hover:opacity-10 transition duration-200 ease-out rounded flex justify-center items-center"><h3>{{ item }}</h3></div>
+  <div class="group flex flex-col justify-center items-center w-96 h-96 p-8 rounded">
+    <div class="bg-black w-96 h-96 absolute opacity-0 group-hover:opacity-10 transition duration-200 ease-out rounded flex justify-center items-center"><h3>{{ item }}</h3></div>
     <img :src="getImg(photo)" alt="" class="h-64">
   </div>
 </template>
@@ -20,7 +20,7 @@ export default {
 </script>
 
 <style scoped>
-  .draw {
+  /* .draw {
   background: none;
   border: 0;
   box-sizing: border-box;
@@ -62,7 +62,7 @@ export default {
   }
   
   .draw:hover {
-    color: #000;
+    color: #ddd;
   }
 
   .draw:hover::before,
@@ -72,8 +72,8 @@ export default {
   }
 
   .draw:hover::before {
-    border-top-color: #000; 
-    border-right-color: #000;
+    border-top-color: #ddd; 
+    border-right-color: #ddd;
     transition:
       width 0.25s ease-out, 
       height 0.25s ease-out 0.25s; 
@@ -89,7 +89,7 @@ export default {
   }
 
 .meet:hover {
-    color: #000;
+    color: #ddd;
   }
 
   .meet::after {
@@ -103,12 +103,12 @@ export default {
   }
 
   .meet:hover::after {
-    border-bottom-color: #999;
-    border-left-color: #999;
+    border-bottom-color: #ddd;
+    border-left-color: #ddd;
     transition: 
       height 0.25s ease-out,
       width 0.25s ease-out 0.25s;
   }
-
+ */
 
 </style>

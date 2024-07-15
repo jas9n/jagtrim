@@ -38,7 +38,7 @@ const itemStore = useItemStore()
               <ProductItem :item="item.name" :photo="item.photo"/>
             </RouterLink>
           </div>
-      </div>
+        </div>
       <RouterLink to="/collection"><GlobalBtn>See More</GlobalBtn></RouterLink>
     </div>
     <div id="gallery" class="w-full h-screen flex justify-center items-center">
