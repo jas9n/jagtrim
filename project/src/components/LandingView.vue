@@ -20,7 +20,7 @@ import gsap from 'gsap'
 export default {
     name: 'LandingView',
     mounted() {
-        var inital = gsap.timeline()
+        const inital = gsap.timeline()
         inital.to('#monogram1', {x: -1500,  opacity: 0.1, duration: 2.3}, 0.3)
         inital.to('#monogram2', {x: 1500, opacity: 0.1, duration: 2.3}, 0.3)
         inital.from('#title', {y: -50, opacity: 0.0, duration: 1}, 1.8)

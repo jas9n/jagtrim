@@ -5,6 +5,9 @@ import ProductItem from '@/components/ProductItem.vue';
 import PhotoGallery from '@/components/PhotoGallery.vue';
 import { gsap } from 'gsap';
 import ScrollTrigger from "gsap/ScrollTrigger";
+
+import { useItemStore } from '@/stores/ItemStore';
+const itemStore = useItemStore()
 </script>
 
 
@@ -28,10 +31,10 @@ import ScrollTrigger from "gsap/ScrollTrigger";
     <div id="collection" class="w-full h-[90vh] flex flex-col justify-center items-center relative">
       <!-- <img id="monogram3" src="../assets/images/monogram-j.svg" class="absolute w-full top-0 opacity-10" alt="">
       <img id="monogram4" src="../assets/images/monogram-t.svg" class="absolute w-full top-0 opacity-10" alt=""> -->
-      <div class="grid grid-flow-row grid-cols-3 justify-center items-center">
-        <div v-for="(item, index) in collection" :key="index">
-          <RouterLink :to="{ path: `/collection/${item.name}` }">
-            <ProductItem :product="item.name" :photo="item.photo"/>
+      <div id="product" class="grid grid-flow-row grid-cols-3 justify-center items-center">
+        <div  v-for="item in itemStore.items">
+          <RouterLink :to="{ name: 'product', params: {id: item.id }}">
+            <ProductItem :product="item.name"/>
           </RouterLink>
         </div>
       </div>
@@ -59,10 +62,13 @@ export default {
             ],
         }
     },
+    setup() {
+      
+    },
     mounted() {
       gsap.registerPlugin(ScrollTrigger);
       
-      var about = gsap.timeline({
+      const about = gsap.timeline({
         scrollTrigger: {
           trigger: '#about',
           start: 'top bottom',
@@ -73,7 +79,7 @@ export default {
       about.fromTo('#landing', {y:0},{y: 140}, 0)
       about.fromTo('#about', {y:0}, {y:0}, 0)
 
-      var sketch = gsap.timeline({
+      const sketch = gsap.timeline({
         scrollTrigger: {
           trigger: '#sketch',
           start: 'top top',
@@ -85,7 +91,7 @@ export default {
       sketch.fromTo('#mask', {x:0},{x: 1000}, 0)
       sketch.fromTo('#img', {x:0}, {x:0}, 0)
 
-      var collection = gsap.timeline({
+      const collection = gsap.timeline({
         scrollTrigger: {
           trigger: '#collection',
           start: 'top bottom',

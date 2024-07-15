@@ -20,34 +20,40 @@ const router = createRouter({
     {
       path: '/collection',
       name: 'collection',
-      children: [
-        {path: '', component: () => import('../views/collection/index.vue')},
-        {path: ':id', component: () => import('../views/collection/_product.vue')}
-      ],
-      
+      component: () => import('../views/CollectionPage.vue'),
+      // children: [
+      //   {name: 'collectionItems', path: ':id', component: () => import('../views/collection/item.vue'), props: true}
+      // ],
     },
+    {
+      path: '/collection/:id',
+      name: 'product',
+      component: () => import('../views/ProductPage.vue'),
+      props: true,
+
+    }
   ],
-  scrollBehavior(to, from, savedPosition) {
-    // always scroll to top
-    if (to.hash) {
-      return {
-        el: to.hash,
-        behavior: 'smooth',
-      }
-    } else if (to.path) {
-      return {
-        el: to.path,
-        top: 0,
-        behavior: 'smooth',
-      }
-    }
-    else {
-      return { 
-        top: 0,
-        behavior: 'smooth',
-       }
-    }
-  },
+  // scrollBehavior(to, from, savedPosition) {
+  //   // always scroll to top
+  //   if (to.hash) {
+  //     return {
+  //       el: to.hash,
+  //       behavior: 'smooth',
+  //     }
+  //   } else if (to.path) {
+  //     return {
+  //       el: to.path,
+  //       top: 0,
+  //       behavior: 'smooth',
+  //     }
+  //   }
+  //   else {
+  //     return { 
+  //       top: 0,
+  //       behavior: 'smooth',
+  //      }
+  //   }
+  // },
 })
 
 export default router
