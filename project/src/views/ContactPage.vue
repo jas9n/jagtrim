@@ -33,7 +33,7 @@ const submitForm = async () => {
   <div id="contact">
     <div class="w-full h-screen flex justify-center items-center">
       <div class="flex justify-center items-center space-x-8 mt-10">
-        <img src="../assets/images/button.svg" alt="Big Yellow Button" class="h-[70vh]">
+        <img src="@/assets/images/photos/button.svg" alt="Big Yellow Button" class="h-[70vh]">
         <div class="flex flex-col justify-center items-start">
           <h2 class="font-serif text-3xl mb-2">Interested in partnering with us?</h2>
           <p>Get in touch with our team to learn more.</p>

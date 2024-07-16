@@ -33,27 +33,29 @@ const router = createRouter({
 
     }
   ],
-  // scrollBehavior(to, from, savedPosition) {
-  //   // always scroll to top
-  //   if (to.hash) {
-  //     return {
-  //       el: to.hash,
-  //       behavior: 'smooth',
-  //     }
-  //   } else if (to.path) {
-  //     return {
-  //       el: to.path,
-  //       top: 0,
-  //       behavior: 'smooth',
-  //     }
-  //   }
-  //   else {
-  //     return { 
-  //       top: 0,
-  //       behavior: 'smooth',
-  //      }
-  //   }
-  // },
+  scrollBehavior(to, from, savedPosition) {
+    // always scroll to top
+    if (savedPosition) {
+      return savedPosition
+    } else if (to.hash) {
+      return {
+        el: to.hash,
+        behavior: 'smooth',
+      }
+    } else if (to.path) {
+      return {
+        el: to.path,
+        top: 0,
+        behavior: 'smooth',
+      }
+    }
+    else {
+      return { 
+        top: 0,
+        behavior: 'smooth',
+       }
+    }
+  },
 })
 
 export default router
