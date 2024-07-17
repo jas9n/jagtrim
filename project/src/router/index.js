@@ -31,25 +31,21 @@ const router = createRouter({
       component: () => import('../views/ProductPage.vue'),
       props: true,
 
-    }
+    },
+    {
+      path: '/sustainability',
+      name: 'sustainability',
+      component: () => import('../views/SustainPage.vue'),
+      // children: [
+      //   {name: 'collectionItems', path: ':id', component: () => import('../views/collection/item.vue'), props: true}
+      // ],
+    },
   ],
   scrollBehavior(to, from, savedPosition) {
     // always scroll to top
     if (savedPosition) {
       return savedPosition
-    } else if (to.hash) {
-      return {
-        el: to.hash,
-        behavior: 'smooth',
-      }
-    } else if (to.path) {
-      return {
-        el: to.path,
-        top: 0,
-        behavior: 'smooth',
-      }
-    }
-    else {
+    } else {
       return { 
         top: 0,
         behavior: 'smooth',

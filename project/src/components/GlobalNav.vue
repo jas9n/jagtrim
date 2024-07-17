@@ -9,11 +9,12 @@
                     </RouterLink>
                 </a>
                 <ul class="hidden justify-center space-x-12 font-medium md:flex">
-                    <li><RouterLink :to="{ name: 'home', hash: '#about' }" class="line relative inline-block" >About Us</RouterLink></li>
                     
-                    <li><RouterLink :to="{ name: 'home', hash: '#collection' }" class="line relative inline-block" >Our Collection</RouterLink></li>
+                    <li><RouterLink :to="{ name: 'collection' }" class="line relative inline-block" >Our Collection</RouterLink></li>
+
+                    <li><RouterLink :to="{ name: 'sustainability' }" class="line relative inline-block" >Sustainability</RouterLink></li>
                     
-                    <li><RouterLink :to="{ name: 'contact', hash: '#contact' }" class="line relative inline-block">Contact Us</RouterLink></li>
+                    <li><RouterLink :to="{ name: 'contact' }" class="line relative inline-block">Contact Us</RouterLink></li>
                 </ul>
                 <div id="toggle" class="right-10 flex justify-center items-center w-12 h-12 rounded-full z-40 cursor-pointer transition duration-150 md:hidden">
                     <div class="menu-icon" @click="toggleMenu">
@@ -25,9 +26,9 @@
                 <div id="menu" v-if="menu" class="fixed inset-0 h-screen w-full text-black bg-white text-xl z-30 pl-16 ease-in duration-200 md:hidden">
                 <!-- <div id="overlay" class="absolute inset-0 w-full h-full bg-black opacity-80 -z-10"></div> -->
                 <ul id="links" class="h-full flex flex-col justify-center items-start space-y-8 text-4xl text-black z-10">
-                    <li @click="toggleMenu" class="relative table-cell"><RouterLink :to="{ name: 'home', hash: '#about' }"  class="relative inline-block py-2">About Us</RouterLink></li>
-                    <li @click="toggleMenu"class="relative table-cell"><RouterLink :to="{ name: 'home', hash: '#collection' }"  class="relative inline-block py-2">Our Collection</RouterLink></li>
-                    <li @click="toggleMenu" class="relative table-cell"><RouterLink :to="{ name: 'contact', hash: '#contact' }" class="relative inline-block py-2">Contact Us</RouterLink></li>
+                    <li @click="toggleMenu"class="relative table-cell"><RouterLink :to="{ name: 'collection' }"  class="relative inline-block py-2">Our Collection</RouterLink></li>
+                    <li @click="toggleMenu" class="relative table-cell"><RouterLink :to="{ name: 'sustainability' }"  class="relative inline-block py-2">Sustainability</RouterLink></li>
+                    <li @click="toggleMenu" class="relative table-cell"><RouterLink :to="{ name: 'contact' }" class="relative inline-block py-2">Contact Us</RouterLink></li>
                 </ul>
             </div>
             </div>

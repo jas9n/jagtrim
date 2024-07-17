@@ -1,7 +1,7 @@
 <template>
-  <div class="group flex w-48 h-48 md:w-72 md:h-72 lg:w-96 lg:h-96 p-8 rounded ">
+  <div class="group flex w-48 h-48 md:w-72 md:h-72 lg:w-96 lg:h-96 p-8 rounded bg-white">
     <RouterLink :to="{ name: 'product', params: {id: id }}" class="flex justify-center items-center">
-      <div class="bg-black hidden md:flex md:w-72 md:h-72 lg:w-96 lg:h-96 absolute opacity-0 group-hover:opacity-10 transition duration-200 ease-out rounded justify-center items-center">
+      <div class="bg-black hidden md:flex md:w-72 md:h-72 lg:w-96 lg:h-96 absolute left-0 opacity-0 group-hover:opacity-10 transition duration-200 ease-out rounded justify-center items-center">
         <!-- <h3>{{ item }}</h3> -->
       </div>
       <img :src="getImg(photo)" alt="" class="h-64">
