@@ -3,7 +3,7 @@
         <nav :class="{ sticky: nav }" class="fixed top-0 flex w-full px-8 py-4 z-50 bg-transparent md:px-12 lg:px-16">
             <div class="w-full h-full flex justify-between items-center">
                 <a href="#">
-                    <RouterLink :to="{ name: 'home', hash: '#landing' }">
+                    <RouterLink :to="{ name: 'home' }">
                             <img src="@/assets/images/logo.svg" alt="JagTrim International" class="h-12">
                         
                     </RouterLink>
@@ -67,7 +67,7 @@ export default {
             } else {
                 this.menu = false
             }
-        }
+        },
     }
 
 }

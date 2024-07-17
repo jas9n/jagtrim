@@ -8,7 +8,7 @@ import gsap from 'gsap'
       <img id="monogram1" src="@/assets/images/monogram-j.svg" class="hidden absolute w-full top-0 md:block" alt="">
       <img id="monogram2" src="@/assets/images/monogram-t.svg" class="hidden absolute w-full top-0 md:block" alt="">
       <div class="flex justify-center items-start absolute right-40">
-        <h1 class="flex flex-col items-end space-y-2 pb-2 font-serif text-xl lg:text-7xl">
+        <h1 class="flex flex-col items-end space-y-3 pb-2 font-serif text-2xl md:text-4xl lg:text-7xl">
           <span id="title">Design by passion.</span>
           <span id="title">Crafted with precision.</span> 
         </h1>

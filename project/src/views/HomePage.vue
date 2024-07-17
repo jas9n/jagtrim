@@ -6,13 +6,14 @@ import PhotoGallery from '@/components/PhotoGallery.vue';
 import { gsap } from 'gsap';
 import ScrollTrigger from "gsap/ScrollTrigger";
 
-import { useItemStore } from '@/stores/ItemStore';
-const itemStore = useItemStore()
+// import { useItemStore } from '@/stores/ItemStore';
+// const itemStore = useItemStore()
+
 </script>
 
 
 <template>
-  <div id="home">
+  <div id="home" :key="$route.fullPath">
     <div id="landing">
       <LandingView />
     </div>
@@ -30,7 +31,7 @@ const itemStore = useItemStore()
     </div>
     <div id="collection" class="w-full md:h-screen flex flex-col justify-center items-center relative">  
       <img src="" alt="">
-      <RouterLink :to="{ name: 'collection' }"><GlobalBtn>See More</GlobalBtn></RouterLink>
+      <RouterLink :to="{ name: 'collection' }"><GlobalBtn>View Collection</GlobalBtn></RouterLink>
     </div>
     <div id="gallery" class="w-full md:h-screen flex justify-center items-center">
       <PhotoGallery />
@@ -47,6 +48,8 @@ export default {
         }
     },
     mounted() {
+      // location.reload()
+      
       gsap.registerPlugin(ScrollTrigger);
       
       const about = gsap.timeline({
@@ -74,5 +77,8 @@ export default {
 
       
     },
+    methods: {
+     
+    }
 }
 </script>

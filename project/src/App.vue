@@ -9,7 +9,7 @@ import GlobalFooter from './components/GlobalFooter.vue';
     <GlobalNav />
   </header>
   <body>
-    <RouterView />
+    <RouterView :key="$route.fullPath"/>
   </body>
   <footer>
     <GlobalFooter />
