@@ -12,9 +12,7 @@ gsap.registerPlugin(ScrollTrigger)
     <div id="collection" class="w-full mt-24 flex flex-col justify-center items-center relative">
       <div class="grid grid-flow-row grid-cols-3 justify-center items-center">
           <div id="product" v-for="item in itemStore.items">
-            <RouterLink :to="{ name: 'product', params: {id: item.id }}">
-              <ProductItem :item="item.name" :photo="item.photo"/>
-            </RouterLink>
+              <ProductItem :item="item.name" :id="item.id" :photo="item.photo"/>
           </div>
         </div>
     </div>

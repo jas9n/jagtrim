@@ -18,27 +18,37 @@ const itemStore = useItemStore()
     </div>
     <div id="about" class="w-full h-[60vh] flex justify-center items-center z-20 bg-white">
       <div class="flex flex-col items-center justify-center w-1/2 space-y-2">
-        <h2 class="font-serif text-4xl pb-2">Reimagining Button Freedom</h2>
-      <p class="text-lg text-center">
+        <h2 class="font-serif text-3xl md:text-4xl lg:text-5xl pb-2 text-center">Reimagining Button Freedom</h2>
+      <p class="text-md md:text-lg lg:text-xl text-center">
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit ipsum ad amet natus magni aperiam doloremque temporibus iure quae ullam placeat corporis tempora doloribus, nihil id. Tempore doloremque quaerat sed.
       </p>
       </div>
     </div>
-    <div id="sketch" class="w-full h-screen flex justify-center items-center">
+    <div id="sketch" class="w-full h-screen hidden justify-center items-center md:flex">
         <img id="img" src="https://images.unsplash.com/photo-1469474968028-56623f02e42e?q=80&w=2948&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="" class="h-screen w-full">
         <div id="mask" class="w-1/3 h-screen bg-black absolute left-0"></div>
     </div>
-    <div id="collection" class="w-full h-[120vh] flex flex-col justify-center items-center relative">  
-        <div class="grid grid-flow-row grid-cols-3 justify-center items-center">
+    <div id="collection" class="w-full md:h-[120vh] flex flex-col justify-center items-center relative">  
+        <div class="grid grid-flow-row grid-cols-2 lg:grid-cols-3 justify-center items-center">
+          <!-- <RouterLink :to="{ name: 'product', params: {id: itemStore.items[0].id }}">
+            <ProductItem :item="itemStore.items[0].name" :photo="itemStore.items[0].photo"/>
+          </RouterLink>
+          <RouterLink :to="{ name: 'product', params: {id: itemStore.items[1].id }}">
+            <ProductItem :item="itemStore.items[1].name" :photo="itemStore.items[1].photo"/>
+          </RouterLink>
+          <RouterLink :to="{ name: 'product', params: {id: itemStore.items[2].id }}">
+            <ProductItem :item="itemStore.items[2].name" :photo="itemStore.items[2].photo"/>
+          </RouterLink>
+          <RouterLink :to="{ name: 'product', params: {id: itemStore.items[3].id }}">
+            <ProductItem :item="itemStore.items[3].name" :photo="itemStore.items[3].photo"/>
+          </RouterLink> -->
           <div id="product" v-if="itemStore" v-for="item in itemStore.items">
-            <RouterLink :to="{ name: 'product', params: {id: item.id }}">
-              <ProductItem :item="item.name" :photo="item.photo"/>
-            </RouterLink>
+              <ProductItem :item="item.name" :id=item.id :photo="item.photo"/>
           </div>
         </div>
       <RouterLink :to="{ name: 'collection' }"><GlobalBtn>See More</GlobalBtn></RouterLink>
     </div>
-    <div id="gallery" class="w-full h-screen flex justify-center items-center">
+    <div id="gallery" class="w-full md:h-screen flex justify-center items-center">
       <PhotoGallery />
     </div>
   </div>

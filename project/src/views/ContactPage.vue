@@ -30,7 +30,7 @@ const submitForm = async () => {
 </script>
 
 <template>
-  <div id="contact">
+  <div id="#contact">
     <div class="w-full h-screen flex justify-center items-center">
       <div class="flex justify-center items-center space-x-8 mt-10">
         <img src="@/assets/images/photos/button.svg" alt="Big Yellow Button" class="h-[70vh]">
