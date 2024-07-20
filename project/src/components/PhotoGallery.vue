@@ -1,6 +1,3 @@
-<script setup>
-</script>
-
 <template>
     <div id="gallery" class="flex justify-center items-center w-full h-[40vh] md:h-screen">
         <div class="group flex justify-center items-center relative w-[90vw] lg:w-[80vw]">
@@ -52,7 +49,3 @@ export default {
     },
 }
 </script>
-
-<style scoped>
-
-</style>

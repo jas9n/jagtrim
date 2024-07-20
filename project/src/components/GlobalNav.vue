@@ -26,7 +26,7 @@
                 <div id="menu" v-if="menu" class="fixed inset-0 h-screen w-full text-black bg-white text-xl z-30 pl-16 ease-in duration-200 md:hidden">
                 <!-- <div id="overlay" class="absolute inset-0 w-full h-full bg-black opacity-80 -z-10"></div> -->
                 <ul id="links" class="h-full flex flex-col justify-center items-start space-y-8 text-4xl text-black z-10">
-                    <li @click="toggleMenu"class="relative table-cell"><RouterLink :to="{ name: 'collection' }"  class="relative inline-block py-2">Our Collection</RouterLink></li>
+                    <li @click="toggleMenu" class="relative table-cell"><RouterLink :to="{ name: 'collection' }"  class="relative inline-block py-2">Our Collection</RouterLink></li>
                     <li @click="toggleMenu" class="relative table-cell"><RouterLink :to="{ name: 'sustainability' }"  class="relative inline-block py-2">Sustainability</RouterLink></li>
                     <li @click="toggleMenu" class="relative table-cell"><RouterLink :to="{ name: 'contact' }" class="relative inline-block py-2">Contact Us</RouterLink></li>
                 </ul>

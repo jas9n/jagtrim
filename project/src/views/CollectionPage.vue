@@ -12,7 +12,7 @@ gsap.registerPlugin(ScrollTrigger)
     <div id="collection" class="w-full mt-24 flex flex-col justify-center items-center relative">
       <img src="../assets/images/monogram3.svg" alt="" class="fixed top-0 w-full">
       <div class="grid grid-cols-3 gap-8 place-items-center">
-          <div id="product" v-for="item in itemStore.items">
+          <div id="product" v-for="item in itemStore.items" :key="item.id">
               <ProductItem :item="item.name" :id="item.id" :photo="item.photo"/>
           </div>
         </div>
